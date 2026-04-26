@@ -5,32 +5,33 @@ const SERVICES = [
   'HDR Blending',
   'Day to Dusk',
   'Flash Ambient',
-  'Portrait Editing',
-  'Virtual Staging',
-  'Floorplan 2D & 3D',
-  'Virtual Renovation',
-  'Video Editing',
-  'Other',
+  'Chỉnh Sửa Ảnh Chân Dung',
+  'Dàn Dựng Ảo',
+  'Bản Vẽ 2D & 3D',
+  'Cải Tạo Ảo',
+  'Chỉnh Sửa Video',
+  'Khác',
 ];
 
 const INFO = [
-  { icon: '📍', label: 'Address', value: '147 Trieu Khuc Street, HaNoi, Vietnam' },
+  { icon: '📍', label: 'Địa Chỉ', value: 'Hà Nội, Việt Nam' },
   { icon: '✉️', label: 'Email', value: 'tantymedia@gmail.com', href: 'mailto:tantymedia@gmail.com' },
-  { icon: '💬', label: 'Skype', value: 'tantymedia@gmail.com' },
-  { icon: '🕐', label: 'Business Hours', value: 'Mon–Fri, 9:00AM – 5:00PM (GMT+7)' },
+  { icon: '📘', label: 'Facebook', value: 'Skyline Visual Studio', href: 'https://www.facebook.com/profile.php?id=61570752783428' },
+  { icon: '📸', label: 'Instagram', value: '@jayce_earley', href: 'https://www.instagram.com/jayce_earley/' },
+  { icon: '🕐', label: 'Giờ Làm Việc', value: 'Thứ Hai – Thứ Sáu, 9:00 – 17:00 (GMT+7)' },
 ];
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
-  const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
+  const [status, setStatus] = useState(null);
   const [errors, setErrors] = useState({});
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim()) e.name = 'Name is required.';
-    if (!form.email.trim()) e.email = 'Email is required.';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Invalid email address.';
-    if (!form.message.trim()) e.message = 'Message is required.';
+    if (!form.name.trim()) e.name = 'Vui lòng nhập họ và tên.';
+    if (!form.email.trim()) e.email = 'Vui lòng nhập địa chỉ email.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Địa chỉ email không hợp lệ.';
+    if (!form.message.trim()) e.message = 'Vui lòng nhập nội dung tin nhắn.';
     return e;
   };
 
@@ -62,11 +63,11 @@ export default function Contact() {
           style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <span className="inline-block px-4 py-1.5 bg-primary-600/20 text-primary-300 text-sm font-semibold rounded-full mb-4 border border-primary-500/30">
-            Get In Touch
+            Liên Hệ Với Chúng Tôi
           </span>
-          <h1 className="text-4xl md:text-5xl font-display font-bold">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold">Liên Hệ</h1>
           <p className="text-gray-300 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-            Have a project in mind? Send us your photos and requirements — we'll get back to you within a few hours.
+            Có dự án trong đầu? Gửi ảnh và yêu cầu của bạn — chúng tôi sẽ phản hồi trong vòng vài giờ.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -84,10 +85,10 @@ export default function Contact() {
             {/* Contact info */}
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Contact Info</span>
-                <h2 className="text-2xl font-display font-bold text-gray-900 mt-2">Let's Talk</h2>
+                <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Thông Tin Liên Hệ</span>
+                <h2 className="text-2xl font-display font-bold text-gray-900 mt-2">Hãy Trò Chuyện</h2>
                 <p className="text-gray-500 mt-3 text-sm leading-relaxed">
-                  Our team is available Monday to Friday, 9AM–5PM (GMT+7). We typically respond within a few hours.
+                  Đội ngũ của chúng tôi làm việc từ Thứ Hai đến Thứ Sáu, 9:00 – 17:00 (GMT+7). Chúng tôi thường phản hồi trong vòng vài giờ.
                 </p>
               </div>
 
@@ -100,7 +101,7 @@ export default function Contact() {
                     <div>
                       <div className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">{item.label}</div>
                       {item.href ? (
-                        <a href={item.href} className="text-gray-700 text-sm font-medium hover:text-primary-600 transition-colors">
+                        <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="text-gray-700 text-sm font-medium hover:text-primary-600 transition-colors">
                           {item.value}
                         </a>
                       ) : (
@@ -114,9 +115,10 @@ export default function Contact() {
               {/* Quick note */}
               <div className="bg-primary-600 rounded-2xl p-6 text-white">
                 <div className="text-2xl mb-3">⚡</div>
-                <h3 className="font-display font-semibold text-lg">12-Hour Turnaround</h3>
+                <h3 className="font-display font-semibold text-lg">Giao Hàng Trong 12–24 Giờ</h3>
                 <p className="text-primary-100 text-sm mt-2 leading-relaxed">
-                  Standard edits are delivered within 12 hours. Virtual staging and floorplans within 24 hours.
+                  Chỉnh sửa tiêu chuẩn giao trong 12 giờ. Dàn dựng ảo và bản vẽ trong 24 giờ.
+                  Hỗ trợ 24/7 kể cả ngày lễ.
                 </p>
               </div>
             </div>
@@ -124,20 +126,20 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10">
-                <h3 className="text-xl font-display font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                <h3 className="text-xl font-display font-bold text-gray-900 mb-6">Gửi Tin Nhắn Cho Chúng Tôi</h3>
 
                 {status === 'success' ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✅</div>
-                    <h4 className="text-xl font-display font-bold text-gray-900">Message Sent!</h4>
+                    <h4 className="text-xl font-display font-bold text-gray-900">Tin Nhắn Đã Gửi!</h4>
                     <p className="text-gray-500 mt-2 text-sm">
-                      Thank you for reaching out. We'll get back to you within a few hours.
+                      Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong vòng vài giờ.
                     </p>
                     <button
                       onClick={() => setStatus(null)}
                       className="mt-6 btn-primary text-sm px-6 py-2.5"
                     >
-                      Send Another Message
+                      Gửi Tin Nhắn Khác
                     </button>
                   </div>
                 ) : (
@@ -145,14 +147,14 @@ export default function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          Full Name <span className="text-red-500">*</span>
+                          Họ và Tên <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="text"
                           name="name"
                           value={form.name}
                           onChange={handleChange}
-                          placeholder="John Smith"
+                          placeholder="Nguyễn Văn A"
                           className={`w-full px-4 py-3 rounded-xl border text-sm outline-none transition-colors ${
                             errors.name ? 'border-red-400 bg-red-50' : 'border-gray-200 focus:border-primary-400 bg-gray-50 focus:bg-white'
                           }`}
@@ -162,14 +164,14 @@ export default function Contact() {
 
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          Email Address <span className="text-red-500">*</span>
+                          Địa Chỉ Email <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="email"
                           name="email"
                           value={form.email}
                           onChange={handleChange}
-                          placeholder="john@example.com"
+                          placeholder="example@email.com"
                           className={`w-full px-4 py-3 rounded-xl border text-sm outline-none transition-colors ${
                             errors.email ? 'border-red-400 bg-red-50' : 'border-gray-200 focus:border-primary-400 bg-gray-50 focus:bg-white'
                           }`}
@@ -180,7 +182,7 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">Số Điện Thoại</label>
                         <input
                           type="tel"
                           name="phone"
@@ -192,14 +194,14 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">Service Needed</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">Dịch Vụ Cần</label>
                         <select
                           name="service"
                           value={form.service}
                           onChange={handleChange}
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 bg-gray-50 focus:bg-white text-sm outline-none transition-colors"
                         >
-                          <option value="">Select a service...</option>
+                          <option value="">Chọn dịch vụ...</option>
                           {SERVICES.map(s => (
                             <option key={s} value={s}>{s}</option>
                           ))}
@@ -209,14 +211,14 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Message <span className="text-red-500">*</span>
+                        Nội Dung <span className="text-red-500">*</span>
                       </label>
                       <textarea
                         name="message"
                         value={form.message}
                         onChange={handleChange}
                         rows={5}
-                        placeholder="Tell us about your project — number of photos, requirements, deadline..."
+                        placeholder="Cho chúng tôi biết về dự án của bạn — số lượng ảnh, yêu cầu, thời hạn..."
                         className={`w-full px-4 py-3 rounded-xl border text-sm outline-none transition-colors resize-none ${
                           errors.message ? 'border-red-400 bg-red-50' : 'border-gray-200 focus:border-primary-400 bg-gray-50 focus:bg-white'
                         }`}
@@ -226,7 +228,7 @@ export default function Contact() {
 
                     {status === 'error' && (
                       <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-600 text-sm">
-                        Something went wrong. Please try again or email us directly.
+                        Có lỗi xảy ra. Vui lòng thử lại hoặc email trực tiếp cho chúng tôi.
                       </div>
                     )}
 
@@ -238,13 +240,13 @@ export default function Contact() {
                       {status === 'loading' ? (
                         <span className="flex items-center gap-2 justify-center">
                           <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                          Sending...
+                          Đang gửi...
                         </span>
-                      ) : 'Send Message →'}
+                      ) : 'Gửi Tin Nhắn →'}
                     </button>
 
                     <p className="text-center text-xs text-gray-400">
-                      We respond within a few hours. Your information is kept private.
+                      Chúng tôi phản hồi trong vòng vài giờ. Thông tin của bạn được bảo mật.
                     </p>
                   </form>
                 )}
@@ -252,17 +254,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Map placeholder */}
-      <section className="h-72 bg-gray-200 relative overflow-hidden">
-        <iframe
-          title="TantyMedia Location"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=105.7800,20.9800,105.8200,21.0200&layer=mapnik&marker=21.0000,105.8000"
-          className="w-full h-full border-0"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 pointer-events-none" />
       </section>
     </>
   );

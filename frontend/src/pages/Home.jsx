@@ -3,32 +3,36 @@ import { Link } from 'react-router-dom';
 import axios from '../lib/axios';
 
 const STATS = [
-  { value: '10K+', label: 'Photos Edited' },
-  { value: '500+', label: 'Happy Clients' },
-  { value: '12hr', label: 'Avg. Turnaround' },
-  { value: '99%', label: 'Satisfaction Rate' },
+  { value: '1,000,000+', label: 'Ảnh Đã Chỉnh Sửa' },
+  { value: '12–24 giờ', label: 'Thời Gian Giao Hàng' },
+  { value: '99%', label: 'Tỷ Lệ Hài Lòng' },
 ];
 
 const WHY = [
   {
-    icon: '⚡',
-    title: 'Fast Delivery',
-    desc: '12-hour turnaround for standard edits (24 hours for virtual staging). We never compromise on speed or quality.',
+    icon: '🏆',
+    title: 'Chất Lượng Chuyên Nghiệp',
+    desc: 'Chỉnh sửa cao cấp với chi tiết sắc nét và tính thẩm mỹ tinh tế — mỗi hình ảnh được chế tác theo tiêu chuẩn cao nhất.',
   },
   {
     icon: '💰',
-    title: 'Reasonable Price',
-    desc: 'We guarantee unbeatable prices for products of the highest quality. Packages for every budget.',
+    title: 'Giá Cả Cạnh Tranh',
+    desc: 'Các gói dịch vụ linh hoạt phù hợp với nhiều ngân sách. Giá cả cạnh tranh linh hoạt theo từng phong cách sản phẩm.',
   },
   {
     icon: '🕐',
-    title: 'Support 24/7',
-    desc: "Our team is available around the clock via live chat, phone, or email. We're always here for you.",
+    title: 'Hỗ Trợ Khách Hàng 24/7',
+    desc: 'Đội ngũ hỗ trợ tận tâm luôn sẵn sàng giúp đỡ bất cứ lúc nào — kể cả ngày lễ.',
   },
   {
-    icon: '✨',
-    title: 'Perfection',
-    desc: 'Not 100% satisfied? We offer free revisions until you love the result. Your satisfaction is our guarantee.',
+    icon: '⚡',
+    title: 'Giao Hàng Nhanh Chóng',
+    desc: 'Giao hàng đáng tin cậy với phản hồi nhanh và quy trình làm việc linh hoạt. Chỉnh sửa tiêu chuẩn trong 12–24 giờ.',
+  },
+  {
+    icon: '🎨',
+    title: 'Dịch Vụ Tùy Chỉnh',
+    desc: 'Phong cách chỉnh sửa được điều chỉnh theo yêu cầu, mục đích và định dạng đầu ra cụ thể của bạn.',
   },
 ];
 
@@ -54,30 +58,29 @@ export default function Home() {
     <>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden pt-20">
-        {/* Background grid */}
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 text-center lg:text-left">
             <span className="inline-block px-4 py-1.5 bg-primary-600/20 text-primary-300 text-sm font-semibold rounded-full mb-6 border border-primary-500/30">
-              Professional Photo Editing
+              Dịch Vụ Chỉnh Sửa Ảnh Chuyên Nghiệp
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
-              Elevate Your <br />
-              <span className="text-primary-400">Real Estate</span> &<br />
-              Portrait Photos
+              Nâng Tầm Ảnh <br />
+              <span className="text-primary-400">Bất Động Sản</span> &<br />
+              Ảnh Chân Dung
             </h1>
             <p className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              From HDR blending to virtual staging, we deliver stunning photo edits with
-              12-hour turnaround at prices you'll love. Trusted by 500+ photographers worldwide.
+              Từ HDR Blending đến dàn dựng ảo, chúng tôi cung cấp dịch vụ chỉnh sửa ảnh tuyệt đẹp
+              với thời gian giao hàng 12–24 giờ. Được tin tưởng bởi các nhiếp ảnh gia trên toàn thế giới.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
               <Link to="/contact" className="btn-primary text-base px-8 py-3.5">
-                Get a Free Quote
+                Nhận Báo Giá Miễn Phí
               </Link>
               <Link to="/services" className="btn-outline text-base px-8 py-3.5 border-gray-500 text-gray-300 hover:bg-white hover:text-gray-900">
-                View Services
+                Xem Dịch Vụ
               </Link>
             </div>
           </div>
@@ -91,7 +94,7 @@ export default function Home() {
               'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80',
             ].map((src, i) => (
               <div key={i} className={`rounded-2xl overflow-hidden ${i === 1 ? 'mt-6' : ''} shadow-2xl`}>
-                <img src={src} alt="edited photo" className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={src} alt="ảnh đã chỉnh sửa" className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>
@@ -108,7 +111,7 @@ export default function Home() {
       {/* ── Stats ── */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {STATS.map(s => (
               <div key={s.label} className="text-center p-6 rounded-2xl bg-primary-50 border border-primary-100">
                 <div className="text-4xl font-display font-bold text-primary-600">{s.value}</div>
@@ -123,10 +126,10 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">What We Offer</span>
-            <h2 className="section-title mt-2">Our Services</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Những Gì Chúng Tôi Cung Cấp</span>
+            <h2 className="section-title mt-2">Dịch Vụ Của Chúng Tôi</h2>
             <p className="section-subtitle">
-              High-quality photo editing tailored to real estate agents, photographers, and individuals.
+              Dịch vụ chỉnh sửa ảnh chất lượng cao dành cho môi giới bất động sản, nhiếp ảnh gia và cá nhân.
             </p>
           </div>
 
@@ -143,7 +146,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-xs text-white bg-primary-600 px-2 py-1 rounded-full">
-                      From {s.price_from} · {s.turnaround}
+                      ⏱ {s.turnaround}
                     </span>
                   </div>
                 </div>
@@ -157,7 +160,7 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <Link to="/services" className="btn-outline">
-              View All Services →
+              Xem Tất Cả Dịch Vụ →
             </Link>
           </div>
         </div>
@@ -170,47 +173,47 @@ export default function Home() {
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80"
-                alt="Our team"
+                alt="Đội ngũ của chúng tôi"
                 className="rounded-2xl shadow-2xl w-full object-cover h-96"
               />
               <div className="absolute -bottom-6 -right-6 bg-primary-600 text-white rounded-2xl p-6 shadow-xl hidden sm:block">
-                <div className="text-3xl font-display font-bold">5+</div>
-                <div className="text-sm text-primary-200">Years of Experience</div>
+                <div className="text-3xl font-display font-bold">10+</div>
+                <div className="text-sm text-primary-200">Năm Kinh Nghiệm</div>
               </div>
             </div>
           </div>
 
           <div className="flex-1">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Who We Are</span>
-            <h2 className="section-title mt-2 text-left">About TantyMedia</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Chúng Tôi Là Ai</span>
+            <h2 className="section-title mt-2 text-left">Về Skyline Visual Studio</h2>
             <p className="text-gray-500 mt-4 leading-relaxed">
-              At TantyMedia, we specialize in providing high-quality and affordable photo editing services
-              tailored to meet your needs. Our team of skilled editors brings years of expertise in
-              real estate photography, wedding retouching, and portrait editing.
+              Tại Skyline Visual Studio, chúng tôi chuyên cung cấp dịch vụ chỉnh sửa ảnh chất lượng cao và
+              giá cả phải chăng, phù hợp với nhu cầu của bạn. Đội ngũ biên tập viên lành nghề mang đến
+              nhiều năm kinh nghiệm trong nhiếp ảnh bất động sản, chỉnh sửa ảnh cưới và ảnh chân dung.
             </p>
             <p className="text-gray-500 mt-4 leading-relaxed">
-              We serve real estate agents who need their listings to stand out, couples documenting
-              their most cherished moments, and professional photographers looking for reliable,
-              top-notch post-production support.
+              Chúng tôi phục vụ các nhà môi giới bất động sản muốn danh sách nhà nổi bật hơn, các cặp đôi
+              lưu giữ những khoảnh khắc đáng nhớ nhất, và các nhiếp ảnh gia chuyên nghiệp đang tìm kiếm
+              hỗ trợ hậu kỳ đáng tin cậy.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 flex-1 min-w-40">
                 <span className="text-2xl">🏆</span>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">Award Winning</div>
-                  <div className="text-xs text-gray-500">Quality Service</div>
+                  <div className="font-semibold text-gray-900 text-sm">Chất Lượng Hàng Đầu</div>
+                  <div className="text-xs text-gray-500">Dịch Vụ Xuất Sắc</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 flex-1 min-w-40">
                 <span className="text-2xl">🌍</span>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">Global Clients</div>
-                  <div className="text-xs text-gray-500">50+ Countries</div>
+                  <div className="font-semibold text-gray-900 text-sm">Khách Hàng Toàn Cầu</div>
+                  <div className="text-xs text-gray-500">10+ Quốc Gia</div>
                 </div>
               </div>
             </div>
             <Link to="/about" className="btn-primary mt-8 inline-flex">
-              Learn More About Us →
+              Tìm Hiểu Thêm Về Chúng Tôi →
             </Link>
           </div>
         </div>
@@ -220,14 +223,14 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-primary-600 to-blue-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-200 font-semibold text-sm uppercase tracking-wider">Our Promise</span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mt-2">Why Choose Us</h2>
+            <span className="text-primary-200 font-semibold text-sm uppercase tracking-wider">Cam Kết Của Chúng Tôi</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mt-2">Tại Sao Chọn Chúng Tôi</h2>
             <p className="text-primary-100 mt-4 max-w-2xl mx-auto">
-              We combine speed, quality, and affordability to deliver the best photo editing experience.
+              Chúng tôi kết hợp tốc độ, chất lượng và giá cả hợp lý để mang lại trải nghiệm chỉnh sửa ảnh tốt nhất.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {WHY.map(w => (
               <div key={w.title} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-colors duration-300">
                 <div className="text-4xl mb-4">{w.icon}</div>
@@ -243,8 +246,8 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Reviews</span>
-            <h2 className="section-title mt-2">What Our Clients Say</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Đánh Giá</span>
+            <h2 className="section-title mt-2">Khách Hàng Nói Gì Về Chúng Tôi</h2>
           </div>
 
           {testimonials.length > 0 && (
@@ -291,16 +294,16 @@ export default function Home() {
       {/* ── CTA ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="section-title">Ready to Transform Your Photos?</h2>
+          <h2 className="section-title">Sẵn Sàng Biến Đổi Ảnh Của Bạn?</h2>
           <p className="section-subtitle">
-            Join 500+ satisfied clients. Send us your photos today and experience the difference.
+            Gửi ảnh của bạn cho chúng tôi ngay hôm nay và trải nghiệm sự khác biệt.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link to="/contact" className="btn-primary text-base px-8 py-4">
-              Get a Free Quote
+              Nhận Báo Giá Miễn Phí
             </Link>
             <a href="mailto:tantymedia@gmail.com" className="btn-outline text-base px-8 py-4">
-              Email Us Directly
+              Gửi Email Cho Chúng Tôi
             </a>
           </div>
         </div>
