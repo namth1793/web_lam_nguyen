@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from '../lib/axios';
 
 const PROCESS = [
-  { step: '01', title: 'Tải Ảnh Lên', desc: 'Gửi ảnh qua email hoặc form liên hệ kèm theo yêu cầu chỉnh sửa của bạn.' },
-  { step: '02', title: 'Chúng Tôi Chỉnh Sửa', desc: 'Các biên tập viên lành nghề bắt tay vào làm việc, áp dụng các kỹ thuật chuyên nghiệp cho ảnh của bạn.' },
-  { step: '03', title: 'Kiểm Tra Chất Lượng', desc: 'Mỗi hình ảnh đều trải qua quá trình kiểm tra chất lượng nghiêm ngặt trước khi giao hàng.' },
-  { step: '04', title: 'Giao Hàng', desc: 'Nhận ảnh đã chỉnh sửa trong vòng 12–24 giờ, sẵn sàng để sử dụng.' },
+  { step: '01', title: 'Upload Photos', desc: 'Send your photos via email or the contact form along with your editing requirements.' },
+  { step: '02', title: 'We Edit', desc: 'Our skilled editors get to work, applying professional techniques to your images.' },
+  { step: '03', title: 'Quality Check', desc: 'Every image undergoes a thorough quality review before delivery.' },
+  { step: '04', title: 'Delivery', desc: 'Receive your edited images within 12–24 hours, ready to use.' },
 ];
 
 export default function Services() {
@@ -27,11 +27,11 @@ export default function Services() {
           style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <span className="inline-block px-4 py-1.5 bg-primary-600/20 text-primary-300 text-sm font-semibold rounded-full mb-4 border border-primary-500/30">
-            Chúng Tôi Làm Gì
+            What We Do
           </span>
-          <h1 className="text-4xl md:text-5xl font-display font-bold">Dịch Vụ Của Chúng Tôi</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold">Our Services</h1>
           <p className="text-gray-300 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-            Dịch vụ chỉnh sửa ảnh chuyên nghiệp cho bất động sản, đám cưới, chân dung và nhiều hơn nữa — giao hàng nhanh với giá cả cạnh tranh.
+            Professional photo editing for real estate, weddings, portraits, and more — fast turnaround at competitive prices.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -45,10 +45,10 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Tất Cả Dịch Vụ</span>
-            <h2 className="section-title mt-2">Giải Pháp Chỉnh Sửa Ảnh</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">All Services</span>
+            <h2 className="section-title mt-2">Photo Editing Solutions</h2>
             <p className="section-subtitle">
-              Lựa chọn từ loạt dịch vụ chỉnh sửa chuyên nghiệp, được thực hiện tỉ mỉ và chu đáo.
+              Choose from a range of professional editing services, each performed with precision and care.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function Services() {
                         ⏱ {s.turnaround}
                       </span>
                       <Link to="/contact" className="text-primary-600 text-xs font-semibold hover:text-primary-700">
-                        Đặt Hàng Ngay →
+                        Order Now →
                       </Link>
                     </div>
                   </div>
@@ -93,10 +93,10 @@ export default function Services() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Quy Trình Làm Việc</span>
-            <h2 className="section-title mt-2">Quy Trình 4 Bước Đơn Giản</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">How It Works</span>
+            <h2 className="section-title mt-2">Simple 4-Step Process</h2>
             <p className="section-subtitle">
-              Chỉnh sửa ảnh của bạn nhanh chóng và không rắc rối.
+              Get your photos edited quickly and without any hassle.
             </p>
           </div>
 
@@ -121,17 +121,17 @@ export default function Services() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="bg-primary-50 border border-primary-100 rounded-3xl p-10">
             <div className="text-5xl mb-4">💰</div>
-            <h2 className="text-2xl font-display font-bold text-gray-900">Giá Cả Cạnh Tranh & Linh Hoạt</h2>
+            <h2 className="text-2xl font-display font-bold text-gray-900">Competitive & Flexible Pricing</h2>
             <p className="text-gray-500 mt-3 leading-relaxed">
-              Chúng tôi cung cấp giá cả cạnh tranh, linh hoạt theo từng phong cách dịch vụ và loại sản phẩm.
-              Liên hệ để nhận báo giá tùy chỉnh phù hợp với nhu cầu và ngân sách của bạn.
+              We offer competitive, flexible pricing tailored to each service style and product type.
+              Contact us for a custom quote that fits your needs and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Link to="/contact" className="btn-primary px-8 py-3.5">
-                Nhận Báo Giá Miễn Phí
+                Get a Free Quote
               </Link>
-              <a href="mailto:tantymedia@gmail.com" className="btn-outline px-8 py-3.5">
-                Gửi Email
+              <a href="mailto:imagejayce@gmail.com" className="btn-outline px-8 py-3.5">
+                Email Us
               </a>
             </div>
           </div>

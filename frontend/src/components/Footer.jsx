@@ -13,8 +13,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Dịch vụ chỉnh sửa ảnh chuyên nghiệp cho bất động sản, đám cưới và chân dung.
-              Chất lượng cao, giao hàng nhanh, giá cả cạnh tranh — được tin tưởng bởi các nhiếp ảnh gia toàn thế giới.
+              Professional photo editing services for real estate, weddings, and portraits.
+              High quality, fast delivery, competitive pricing — trusted by photographers worldwide.
             </p>
             <div className="flex gap-3 mt-5">
               <a
@@ -44,13 +44,13 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Liên Kết Nhanh</h4>
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { to: '/', label: 'Trang Chủ' },
-                { to: '/about', label: 'Về Chúng Tôi' },
-                { to: '/services', label: 'Dịch Vụ' },
-                { to: '/contact', label: 'Liên Hệ' },
+                { to: '/', label: 'Home' },
+                { to: '/about', label: 'About' },
+                { to: '/services', label: 'Services' },
+                { to: '/contact', label: 'Contact' },
               ].map(l => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -63,21 +63,21 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Liên Hệ</h4>
+            <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex gap-2">
                 <span>📍</span>
-                <span>Hà Nội, Việt Nam</span>
+                <span>Hanoi, Vietnam</span>
               </li>
               <li className="flex gap-2">
                 <span>✉️</span>
-                <a href="mailto:tantymedia@gmail.com" className="hover:text-white transition-colors">
-                  tantymedia@gmail.com
+                <a href="mailto:imagejayce@gmail.com" className="hover:text-white transition-colors">
+                  imagejayce@gmail.com
                 </a>
               </li>
               <li className="flex gap-2">
                 <span>🕐</span>
-                <span>Thứ Hai – Thứ Sáu, 9:00 – 17:00 (GMT+7)</span>
+                <span>Monday – Friday, 9:00 – 17:00 (GMT+7)</span>
               </li>
             </ul>
           </div>
@@ -86,8 +86,8 @@ export default function Footer() {
 
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Skyline Visual Studio. Tất cả quyền được bảo lưu.</p>
-          <p>Dịch Vụ Chỉnh Sửa Ảnh Chuyên Nghiệp</p>
+          <p>© {new Date().getFullYear()} Skyline Visual Studio. All rights reserved.</p>
+          <p>Professional Photo Editing Services</p>
         </div>
       </div>
     </footer>

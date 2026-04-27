@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const links = [
-  { to: '/', label: 'Trang Chủ' },
-  { to: '/about', label: 'Về Chúng Tôi' },
-  { to: '/services', label: 'Dịch Vụ' },
-  { to: '/contact', label: 'Liên Hệ' },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link to="/contact" className="ml-3 btn-primary text-sm px-5 py-2.5">
-            Nhận Báo Giá
+            Get a Quote
           </Link>
         </nav>
 
@@ -80,7 +80,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link to="/contact" className="block btn-primary text-sm text-center mt-2">
-            Nhận Báo Giá
+            Get a Quote
           </Link>
         </div>
       </div>

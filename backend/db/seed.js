@@ -7,73 +7,73 @@ db.exec('DELETE FROM contacts');
 const services = [
   {
     title: 'HDR Blending',
-    description: 'Kết hợp nhiều lớp phơi sáng để tạo ra ảnh bất động sản hoàn hảo với chi tiết sắc nét trong cả vùng sáng và vùng tối.',
+    description: 'Combine multiple exposure layers to produce flawless real estate images with sharp detail in both highlights and shadows.',
     icon: 'camera',
-    image: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=600&q=80',
-    turnaround: '12 giờ',
+    image: '/project/HDR.jpg',
+    turnaround: '12 hours',
     price_from: '',
     sort_order: 1
   },
   {
     title: 'Day to Dusk',
-    description: 'Biến ảnh bất động sản ban ngày thành cảnh hoàng hôn tuyệt đẹp, thu hút nhiều người mua hơn và tăng sức hút cho danh sách nhà.',
+    description: 'Transform daytime real estate photos into stunning twilight scenes that attract more buyers and boost listing appeal.',
     icon: 'sun',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80',
-    turnaround: '12 giờ',
+    image: '/project/Day  .jpg',
+    turnaround: '12 hours',
     price_from: '',
     sort_order: 2
   },
   {
     title: 'Flash Ambient',
-    description: 'Kết hợp chuyên nghiệp ánh sáng flash và ánh sáng môi trường cho nhiếp ảnh nội thất, giúp bất động sản hiện ra trong ánh sáng tự nhiên đẹp nhất.',
+    description: 'Professionally blend flash and ambient light for interior photography, showcasing properties in their most natural, beautiful light.',
     icon: 'zap',
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80',
-    turnaround: '12 giờ',
+    image: '/project/Flash Ambient.jpg',
+    turnaround: '12 hours',
     price_from: '',
     sort_order: 3
   },
   {
-    title: 'Chỉnh Sửa Ảnh Chân Dung',
-    description: 'Chỉnh sửa chân dung chuyên nghiệp cho ảnh cưới, ảnh doanh nghiệp và ảnh cá nhân với kết quả tự nhiên, tôn nét đẹp.',
+    title: 'Portrait Retouching',
+    description: 'Professional portrait editing for weddings, corporate headshots, and personal photos with natural, flattering results.',
     icon: 'user',
     image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80',
-    turnaround: '12 giờ',
+    turnaround: '12 hours',
     price_from: '',
     sort_order: 4
   },
   {
-    title: 'Dàn Dựng Ảo',
-    description: 'Trang trí nội thất số cho các căn phòng trống, giúp người mua hình dung tiềm năng đầy đủ của bất động sản, tăng tương tác và doanh số.',
+    title: 'Virtual Staging',
+    description: 'Digitally furnish empty rooms so buyers can visualize the full potential of a property, increasing engagement and sales.',
     icon: 'home',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80',
-    turnaround: '24 giờ',
+    image: '/project/Virtual Renovation and Virtual Staging.jpg',
+    turnaround: '24 hours',
     price_from: '',
     sort_order: 5
   },
   {
-    title: 'Bản Vẽ 2D & 3D',
-    description: 'Tạo bản vẽ mặt bằng 2D và 3D chi tiết, chính xác, giúp người mua hiểu rõ bố cục và kích thước của bất động sản.',
+    title: 'Floorplan 2D & 3D',
+    description: 'Create accurate, detailed 2D and 3D floor plans that help buyers clearly understand a property\'s layout and dimensions.',
     icon: 'layout',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-    turnaround: '24 giờ',
+    image: '/project/Floorplan 2D.webp',
+    turnaround: '24 hours',
     price_from: '',
     sort_order: 6
   },
   {
-    title: 'Cải Tạo Ảo',
-    description: 'Thể hiện tiềm năng trước và sau của bất động sản bằng cách cải tạo không gian kỹ thuật số — sơn mới, sàn mới, đồ đạc và nhiều hơn nữa.',
+    title: 'Virtual Renovation',
+    description: 'Showcase a property\'s before-and-after potential through digital renovation — new paint, flooring, furniture, and more.',
     icon: 'tool',
-    image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80',
-    turnaround: '24 giờ',
+    image: '/project/Virtual Renovation and Virtual Staging.jpg',
+    turnaround: '24 hours',
     price_from: '',
     sort_order: 7
   },
   {
-    title: 'Chỉnh Sửa Video',
-    description: 'Chỉnh sửa video tham quan bất động sản và drone chuyên nghiệp với hiệu chỉnh màu sắc, âm nhạc và chuyển cảnh mượt mà.',
+    title: 'Video Editing',
+    description: 'Professional editing for real estate walkthrough and drone videos with color grading, music, and smooth transitions.',
     icon: 'video',
-    image: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?w=600&q=80',
-    turnaround: '24 giờ',
+    image: '/project/sunset..jpg',
+    turnaround: '24 hours',
     price_from: '',
     sort_order: 8
   }
@@ -88,29 +88,29 @@ services.forEach(s => insertService.run(s));
 const testimonials = [
   {
     name: 'Sarah Thompson',
-    role: 'Môi Giới Bất Động Sản, Century 21',
-    content: 'Skyline Visual Studio đã hoàn toàn thay đổi danh sách bất động sản của tôi. Sự chú ý đến từng chi tiết và thời gian giao hàng 12 giờ thực sự ấn tượng. Các tin đăng của tôi hiện bán nhanh hơn 40%!',
+    role: 'Real Estate Agent, Century 21',
+    content: 'Skyline Visual Studio completely transformed my property listings. The attention to detail and 12-hour turnaround is truly impressive. My listings now sell 40% faster!',
     rating: 5,
     avatar: 'https://i.pravatar.cc/150?img=47'
   },
   {
     name: 'Michael Chen',
-    role: 'Nhiếp Ảnh Gia Cưới',
-    content: 'Họ đã biến ảnh cưới của tôi thành những kỷ niệm tuyệt đẹp mà khách hàng trân trọng mãi. Hiệu chỉnh màu và retouching hoàn toàn hoàn hảo. Rất đáng để giới thiệu!',
+    role: 'Wedding Photographer',
+    content: 'They turned my wedding photos into beautiful memories that clients will treasure forever. The color grading and retouching are absolutely perfect. Highly recommended!',
     rating: 5,
     avatar: 'https://i.pravatar.cc/150?img=12'
   },
   {
     name: 'Emily Rodriguez',
-    role: 'Nhiếp Ảnh Gia Chuyên Nghiệp',
-    content: 'Đội ngũ không chỉ tài năng mà còn rất dễ làm việc cùng. Giao tiếp mượt mà, giá cả cạnh tranh và chất lượng luôn xuất sắc.',
+    role: 'Professional Photographer',
+    content: 'The team is not only talented but also very easy to work with. Smooth communication, competitive pricing, and consistently outstanding quality.',
     rating: 5,
     avatar: 'https://i.pravatar.cc/150?img=32'
   },
   {
     name: 'James Wilson',
-    role: 'Nhà Phát Triển Bất Động Sản',
-    content: 'Dịch vụ dàn dựng ảo thực sự thay đổi cuộc chơi! Các căn hộ trống giờ trông đẹp đẽ và bán nhanh hơn rất nhiều. ROI của dịch vụ này thật tuyệt vời.',
+    role: 'Real Estate Developer',
+    content: 'The virtual staging service is a real game-changer! Empty units now look beautiful and sell much faster. The ROI on this service is incredible.',
     rating: 5,
     avatar: 'https://i.pravatar.cc/150?img=8'
   }
@@ -122,4 +122,4 @@ const insertTestimonial = db.prepare(`
 `);
 testimonials.forEach(t => insertTestimonial.run(t));
 
-console.log('✅ Seed hoàn tất: 8 dịch vụ, 4 đánh giá');
+console.log('✅ Seed complete: 8 services, 4 testimonials');

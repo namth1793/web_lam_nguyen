@@ -3,36 +3,36 @@ import { Link } from 'react-router-dom';
 import axios from '../lib/axios';
 
 const STATS = [
-  { value: '1,000,000+', label: 'Ảnh Đã Chỉnh Sửa' },
-  { value: '12–24 giờ', label: 'Thời Gian Giao Hàng' },
-  { value: '99%', label: 'Tỷ Lệ Hài Lòng' },
+  { value: '1,000,000+', label: 'Photos Edited' },
+  { value: '12–24 hrs', label: 'Delivery Time' },
+  { value: '99%', label: 'Satisfaction Rate' },
 ];
 
 const WHY = [
   {
     icon: '🏆',
-    title: 'Chất Lượng Chuyên Nghiệp',
-    desc: 'Chỉnh sửa cao cấp với chi tiết sắc nét và tính thẩm mỹ tinh tế — mỗi hình ảnh được chế tác theo tiêu chuẩn cao nhất.',
+    title: 'Professional Quality',
+    desc: 'Premium edits with sharp detail and refined aesthetics — every image crafted to the highest standard.',
   },
   {
     icon: '💰',
-    title: 'Giá Cả Cạnh Tranh',
-    desc: 'Các gói dịch vụ linh hoạt phù hợp với nhiều ngân sách. Giá cả cạnh tranh linh hoạt theo từng phong cách sản phẩm.',
+    title: 'Competitive Pricing',
+    desc: 'Flexible packages that fit any budget. Competitive rates tailored to each product style.',
   },
   {
     icon: '🕐',
-    title: 'Hỗ Trợ Khách Hàng 24/7',
-    desc: 'Đội ngũ hỗ trợ tận tâm luôn sẵn sàng giúp đỡ bất cứ lúc nào — kể cả ngày lễ.',
+    title: '24/7 Customer Support',
+    desc: 'A dedicated support team always ready to help at any time — including holidays.',
   },
   {
     icon: '⚡',
-    title: 'Giao Hàng Nhanh Chóng',
-    desc: 'Giao hàng đáng tin cậy với phản hồi nhanh và quy trình làm việc linh hoạt. Chỉnh sửa tiêu chuẩn trong 12–24 giờ.',
+    title: 'Fast Delivery',
+    desc: 'Reliable turnaround with quick responses and a flexible workflow. Standard edits in 12–24 hours.',
   },
   {
     icon: '🎨',
-    title: 'Dịch Vụ Tùy Chỉnh',
-    desc: 'Phong cách chỉnh sửa được điều chỉnh theo yêu cầu, mục đích và định dạng đầu ra cụ thể của bạn.',
+    title: 'Custom Services',
+    desc: 'Editing styles tailored to your specific requirements, purpose, and desired output format.',
   },
 ];
 
@@ -64,23 +64,23 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 text-center lg:text-left">
             <span className="inline-block px-4 py-1.5 bg-primary-600/20 text-primary-300 text-sm font-semibold rounded-full mb-6 border border-primary-500/30">
-              Dịch Vụ Chỉnh Sửa Ảnh Chuyên Nghiệp
+              Professional Photo Editing Services
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
-              Nâng Tầm Ảnh <br />
-              <span className="text-primary-400">Bất Động Sản</span> &<br />
-              Ảnh Chân Dung
+              Elevate Your <br />
+              <span className="text-primary-400">Real Estate</span> &<br />
+              Portrait Photography
             </h1>
             <p className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Từ HDR Blending đến dàn dựng ảo, chúng tôi cung cấp dịch vụ chỉnh sửa ảnh tuyệt đẹp
-              với thời gian giao hàng 12–24 giờ. Được tin tưởng bởi các nhiếp ảnh gia trên toàn thế giới.
+              From HDR Blending to Virtual Staging, we deliver stunning photo editing services
+              with 12–24 hour turnaround. Trusted by photographers worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
               <Link to="/contact" className="btn-primary text-base px-8 py-3.5">
-                Nhận Báo Giá Miễn Phí
+                Get a Free Quote
               </Link>
               <Link to="/services" className="btn-outline text-base px-8 py-3.5 border-gray-500 text-gray-300 hover:bg-white hover:text-gray-900">
-                Xem Dịch Vụ
+                View Services
               </Link>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
               'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80',
             ].map((src, i) => (
               <div key={i} className={`rounded-2xl overflow-hidden ${i === 1 ? 'mt-6' : ''} shadow-2xl`}>
-                <img src={src} alt="ảnh đã chỉnh sửa" className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={src} alt="edited photo" className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>
@@ -126,10 +126,10 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Những Gì Chúng Tôi Cung Cấp</span>
-            <h2 className="section-title mt-2">Dịch Vụ Của Chúng Tôi</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">What We Offer</span>
+            <h2 className="section-title mt-2">Our Services</h2>
             <p className="section-subtitle">
-              Dịch vụ chỉnh sửa ảnh chất lượng cao dành cho môi giới bất động sản, nhiếp ảnh gia và cá nhân.
+              High-quality photo editing services for real estate agents, photographers, and individuals.
             </p>
           </div>
 
@@ -160,7 +160,7 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <Link to="/services" className="btn-outline">
-              Xem Tất Cả Dịch Vụ →
+              View All Services →
             </Link>
           </div>
         </div>
@@ -173,47 +173,46 @@ export default function Home() {
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80"
-                alt="Đội ngũ của chúng tôi"
+                alt="Our team"
                 className="rounded-2xl shadow-2xl w-full object-cover h-96"
               />
               <div className="absolute -bottom-6 -right-6 bg-primary-600 text-white rounded-2xl p-6 shadow-xl hidden sm:block">
                 <div className="text-3xl font-display font-bold">10+</div>
-                <div className="text-sm text-primary-200">Năm Kinh Nghiệm</div>
+                <div className="text-sm text-primary-200">Years of Experience</div>
               </div>
             </div>
           </div>
 
           <div className="flex-1">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Chúng Tôi Là Ai</span>
-            <h2 className="section-title mt-2 text-left">Về Skyline Visual Studio</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+            <h2 className="section-title mt-2 text-left">About Skyline Visual Studio</h2>
             <p className="text-gray-500 mt-4 leading-relaxed">
-              Tại Skyline Visual Studio, chúng tôi chuyên cung cấp dịch vụ chỉnh sửa ảnh chất lượng cao và
-              giá cả phải chăng, phù hợp với nhu cầu của bạn. Đội ngũ biên tập viên lành nghề mang đến
-              nhiều năm kinh nghiệm trong nhiếp ảnh bất động sản, chỉnh sửa ảnh cưới và ảnh chân dung.
+              At Skyline Visual Studio, we specialize in delivering high-quality, affordable photo editing
+              services tailored to your needs. Our team of skilled editors brings years of experience in
+              real estate photography, wedding photo editing, and portrait retouching.
             </p>
             <p className="text-gray-500 mt-4 leading-relaxed">
-              Chúng tôi phục vụ các nhà môi giới bất động sản muốn danh sách nhà nổi bật hơn, các cặp đôi
-              lưu giữ những khoảnh khắc đáng nhớ nhất, và các nhiếp ảnh gia chuyên nghiệp đang tìm kiếm
-              hỗ trợ hậu kỳ đáng tin cậy.
+              We serve real estate agents looking for standout listings, couples preserving their most
+              memorable moments, and professional photographers seeking reliable post-production support.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 flex-1 min-w-40">
                 <span className="text-2xl">🏆</span>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">Chất Lượng Hàng Đầu</div>
-                  <div className="text-xs text-gray-500">Dịch Vụ Xuất Sắc</div>
+                  <div className="font-semibold text-gray-900 text-sm">Top Quality</div>
+                  <div className="text-xs text-gray-500">Outstanding Service</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 flex-1 min-w-40">
                 <span className="text-2xl">🌍</span>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">Khách Hàng Toàn Cầu</div>
-                  <div className="text-xs text-gray-500">10+ Quốc Gia</div>
+                  <div className="font-semibold text-gray-900 text-sm">Global Clients</div>
+                  <div className="text-xs text-gray-500">10+ Countries</div>
                 </div>
               </div>
             </div>
             <Link to="/about" className="btn-primary mt-8 inline-flex">
-              Tìm Hiểu Thêm Về Chúng Tôi →
+              Learn More About Us →
             </Link>
           </div>
         </div>
@@ -223,10 +222,10 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-primary-600 to-blue-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-200 font-semibold text-sm uppercase tracking-wider">Cam Kết Của Chúng Tôi</span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mt-2">Tại Sao Chọn Chúng Tôi</h2>
+            <span className="text-primary-200 font-semibold text-sm uppercase tracking-wider">Our Commitment</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mt-2">Why Choose Us</h2>
             <p className="text-primary-100 mt-4 max-w-2xl mx-auto">
-              Chúng tôi kết hợp tốc độ, chất lượng và giá cả hợp lý để mang lại trải nghiệm chỉnh sửa ảnh tốt nhất.
+              We combine speed, quality, and affordability to deliver the best photo editing experience.
             </p>
           </div>
 
@@ -246,8 +245,8 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Đánh Giá</span>
-            <h2 className="section-title mt-2">Khách Hàng Nói Gì Về Chúng Tôi</h2>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Reviews</span>
+            <h2 className="section-title mt-2">What Our Clients Say</h2>
           </div>
 
           {testimonials.length > 0 && (
@@ -294,16 +293,16 @@ export default function Home() {
       {/* ── CTA ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="section-title">Sẵn Sàng Biến Đổi Ảnh Của Bạn?</h2>
+          <h2 className="section-title">Ready to Transform Your Photos?</h2>
           <p className="section-subtitle">
-            Gửi ảnh của bạn cho chúng tôi ngay hôm nay và trải nghiệm sự khác biệt.
+            Send us your images today and experience the difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link to="/contact" className="btn-primary text-base px-8 py-4">
-              Nhận Báo Giá Miễn Phí
+              Get a Free Quote
             </Link>
-            <a href="mailto:tantymedia@gmail.com" className="btn-outline text-base px-8 py-4">
-              Gửi Email Cho Chúng Tôi
+            <a href="mailto:imagejayce@gmail.com" className="btn-outline text-base px-8 py-4">
+              Email Us
             </a>
           </div>
         </div>
