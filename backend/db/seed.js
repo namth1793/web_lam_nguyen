@@ -18,7 +18,7 @@ const services = [
     title: 'Day to Dusk',
     description: 'Transform daytime real estate photos into stunning twilight scenes that attract more buyers and boost listing appeal.',
     icon: 'sun',
-    image: '/project/Day  .jpg',
+    image: '/project/Day__.jpg',
     turnaround: '12 hours',
     price_from: '',
     sort_order: 2
@@ -27,7 +27,7 @@ const services = [
     title: 'Flash Ambient',
     description: 'Professionally blend flash and ambient light for interior photography, showcasing properties in their most natural, beautiful light.',
     icon: 'zap',
-    image: '/project/Flash Ambient.jpg',
+    image: '/project/Flash_Ambient.jpg',
     turnaround: '12 hours',
     price_from: '',
     sort_order: 3
@@ -45,7 +45,7 @@ const services = [
     title: 'Virtual Staging',
     description: 'Digitally furnish empty rooms so buyers can visualize the full potential of a property, increasing engagement and sales.',
     icon: 'home',
-    image: '/project/Virtual Renovation and Virtual Staging.jpg',
+    image: '/project/Virtual_Renovation_and_Virtual_Staging.jpg',
     turnaround: '24 hours',
     price_from: '',
     sort_order: 5
@@ -63,7 +63,7 @@ const services = [
     title: 'Virtual Renovation',
     description: 'Showcase a property\'s before-and-after potential through digital renovation — new paint, flooring, furniture, and more.',
     icon: 'tool',
-    image: '/project/Virtual Renovation and Virtual Staging.jpg',
+    image: '/project/Virtual_Renovation_and_Virtual_Staging.jpg',
     turnaround: '24 hours',
     price_from: '',
     sort_order: 7
