@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from '../lib/axios';
+import Payment from '../components/Payment';
 
 const STATS = [
   { value: '1,000,000+', label: 'Photos Edited' },
@@ -290,8 +291,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Payment Methods ── */}
+      <Payment />
+
       {/* ── CTA ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="section-title">Ready to Transform Your Photos?</h2>
           <p className="section-subtitle">

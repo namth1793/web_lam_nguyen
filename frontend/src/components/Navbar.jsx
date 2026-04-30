@@ -22,13 +22,11 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-4'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#F5F5F2] shadow-md py-1' : 'bg-[#F5F5F2] backdrop-blur-sm py-1'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="font-display font-bold text-xl text-gray-900">
-            Skyline<span className="text-primary-600"> Visual Studio</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src="/project/Skyline Visual Studio.png" alt="Skyline Visual Studio" className="h-20 w-auto" />
         </Link>
 
         {/* Desktop nav */}

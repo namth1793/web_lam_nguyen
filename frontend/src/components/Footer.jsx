@@ -7,10 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="font-display font-bold text-xl text-white">
-                Skyline<span className="text-primary-400"> Visual Studio</span>
-              </span>
+            <div className="mb-4">
+              <img src="/project/Skyline Visual Studio.png" alt="Skyline Visual Studio" className="h-10 w-auto" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Professional photo editing services for real estate, weddings, and portraits.
