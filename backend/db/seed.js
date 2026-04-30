@@ -72,7 +72,7 @@ const services = [
     title: 'Video Editing',
     description: 'Professional editing for real estate walkthrough and drone videos with color grading, music, and smooth transitions.',
     icon: 'video',
-    image: '/project/sunset..jpg',
+    image: '/project/video.mp4',
     turnaround: '24 hours',
     price_from: '',
     sort_order: 8

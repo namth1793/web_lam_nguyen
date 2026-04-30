@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Payment from '../components/Payment';
+import Lightbox from '../components/Lightbox';
 import axios from '../lib/axios';
+
+const isVideo = (src) => src && /\.(mp4|webm|ogg)$/i.test(src);
 
 const STATS = [
   { value: '1,000,000+', label: 'Photos Edited' },
@@ -41,6 +44,7 @@ export default function Home() {
   const [services, setServices] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => {
     axios.get('/api/services').then(r => setServices(r.data)).catch(() => {});
@@ -57,6 +61,10 @@ export default function Home() {
 
   return (
     <>
+      {lightbox && (
+        <Lightbox image={lightbox.image} title={lightbox.title} onClose={() => setLightbox(null)} />
+      )}
+
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden pt-20">
         <div className="absolute inset-0 opacity-10"
@@ -136,17 +144,32 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map(s => (
-              <div key={s.id} className="card group cursor-pointer">
-                <div className="relative overflow-hidden h-48">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div key={s.id} className="card group">
+                <div
+                  className="relative overflow-hidden h-48 cursor-zoom-in"
+                  onClick={() => setLightbox({ image: s.image, title: s.title })}
+                >
+                  {isVideo(s.image) ? (
+                    <video
+                      src={s.image}
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onMouseEnter={e => e.target.play()}
+                      onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0; }}
+                    />
+                  ) : (
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-3xl drop-shadow">{isVideo(s.image) ? '▶' : '🔍'}</span>
                   </div>
                 </div>
                 <div className="p-5">

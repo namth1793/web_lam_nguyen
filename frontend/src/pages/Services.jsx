@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Lightbox from '../components/Lightbox';
 import axios from '../lib/axios';
+
+const isVideo = (src) => src && /\.(mp4|webm|ogg)$/i.test(src);
 
 const PROCESS = [
   { step: '01', title: 'Upload Photos', desc: 'Send your photos via email or the contact form along with your editing requirements.' },
@@ -12,6 +15,7 @@ const PROCESS = [
 export default function Services() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [lightbox, setLightbox] = useState(null); // { image, title }
 
   useEffect(() => {
     axios.get('/api/services')
@@ -21,6 +25,9 @@ export default function Services() {
 
   return (
     <>
+      {lightbox && (
+        <Lightbox image={lightbox.image} title={lightbox.title} onClose={() => setLightbox(null)} />
+      )}
       {/* Hero */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"
@@ -62,22 +69,37 @@ export default function Services() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map(s => (
                 <div key={s.id} className="card group">
-                  <div className="relative overflow-hidden h-52">
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
-                    />
+                  <div
+                    className="relative overflow-hidden h-52 cursor-zoom-in"
+                    onClick={() => setLightbox({ image: s.image, title: s.title })}
+                  >
+                    {isVideo(s.image) ? (
+                      <video
+                        src={s.image}
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onMouseEnter={e => e.target.play()}
+                        onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0; }}
+                      />
+                    ) : (
+                      <img
+                        src={s.image}
+                        alt={s.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white text-3xl drop-shadow">{isVideo(s.image) ? '▶' : '🔍'}</span>
+                    </div>
                   </div>
                   <div className="p-5">
                     <h3 className="font-display font-semibold text-gray-900 text-base mb-2">{s.title}</h3>
                     <p className="text-sm text-gray-500 leading-relaxed mb-4">{s.description}</p>
                     <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                      <span className="text-xs text-gray-400 flex items-center gap-1">
-                        ⏱ {s.turnaround}
-                      </span>
                       <Link to="/contact" className="text-primary-600 text-xs font-semibold hover:text-primary-700">
                         Order Now →
                       </Link>
