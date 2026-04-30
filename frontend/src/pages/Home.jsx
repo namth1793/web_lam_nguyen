@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from '../lib/axios';
 import Payment from '../components/Payment';
+import axios from '../lib/axios';
 
 const STATS = [
   { value: '1,000,000+', label: 'Photos Edited' },
@@ -141,14 +141,12 @@ export default function Home() {
                   <img
                     src={s.image}
                     alt={s.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-xs text-white bg-primary-600 px-2 py-1 rounded-full">
-                      ⏱ {s.turnaround}
-                    </span>
                   </div>
                 </div>
                 <div className="p-5">

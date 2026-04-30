@@ -18,7 +18,7 @@ const INFO = [
   { icon: '✉️', label: 'Email', value: 'imagejayce@gmail.com', href: 'mailto:imagejayce@gmail.com' },
   { icon: '📘', label: 'Facebook', value: 'Skyline Visual Studio', href: 'https://www.facebook.com/profile.php?id=61570752783428' },
   { icon: '📸', label: 'Instagram', value: '@jayce_earley', href: 'https://www.instagram.com/jayce_earley/' },
-  { icon: '🕐', label: 'Working Hours', value: 'Monday – Friday, 9:00 – 17:00 (GMT+7)' },
+  { icon: '🕐', label: 'Working Hours', value: '24/7 – Always Open' },
 ];
 
 export default function Contact() {
@@ -88,7 +88,7 @@ export default function Contact() {
                 <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">Contact Information</span>
                 <h2 className="text-2xl font-display font-bold text-gray-900 mt-2">Let's Talk</h2>
                 <p className="text-gray-500 mt-3 text-sm leading-relaxed">
-                  Our team works Monday to Friday, 9:00 – 17:00 (GMT+7). We typically respond within a few hours.
+                  Our team is available 24/7. We typically respond within a few hours.
                 </p>
               </div>
 

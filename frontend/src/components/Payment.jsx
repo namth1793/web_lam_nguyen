@@ -95,60 +95,11 @@ export default function Payment() {
                   {m.badge}
                 </span>
               </div>
-
-              {/* Network */}
-              <div className="text-xs text-gray-400 font-medium">{m.network}</div>
-
-              {/* Address */}
-              <div className="bg-gray-50 rounded-xl px-4 py-3 flex items-center gap-2 min-w-0">
-                <span className="text-gray-700 text-sm font-mono truncate flex-1 select-all" title={m.address}>
-                  {m.address}
-                </span>
-                <button
-                  onClick={() => copy(m.id, m.address)}
-                  className="flex-shrink-0 p-1.5 rounded-lg hover:bg-gray-200 transition-colors duration-150 text-gray-500 hover:text-gray-800"
-                  title="Copy"
-                >
-                  {copied === m.id ? (
-                    <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-green-600">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                      <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-                      <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-                    </svg>
-                  )}
-                </button>
-              </div>
-
               {copied === m.id && (
                 <p className="text-xs text-green-600 font-medium text-center -mt-2">Copied to clipboard!</p>
               )}
             </div>
           ))}
-        </div>
-
-        {/* Bottom note */}
-        <div className="mt-10 text-center flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
-          <span className="flex items-center gap-2">
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-green-500">
-              <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            Secure & verified payments
-          </span>
-          <span className="flex items-center gap-2">
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-blue-500">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-            </svg>
-            Work starts within 1 hour of payment confirmation
-          </span>
-          <span className="flex items-center gap-2">
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-500">
-              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-4a1 1 0 011-1h2a1 1 0 011 1v13a1 1 0 01-1 1h-2a1 1 0 01-1-1V3z" />
-            </svg>
-            All prices in USD
-          </span>
         </div>
       </div>
     </section>

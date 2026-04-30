@@ -75,7 +75,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-2">
                 <span>🕐</span>
-                <span>Monday – Friday, 9:00 – 17:00 (GMT+7)</span>
+                <span>24/7 – Always Open</span>
               </li>
             </ul>
           </div>

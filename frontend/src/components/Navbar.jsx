@@ -30,7 +30,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
           {links.map(l => (
             <Link
               key={l.to}
@@ -44,9 +44,6 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to="/contact" className="ml-3 btn-primary text-sm px-5 py-2.5">
-            Get a Quote
-          </Link>
         </nav>
 
         {/* Mobile burger */}
@@ -77,9 +74,6 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to="/contact" className="block btn-primary text-sm text-center mt-2">
-            Get a Quote
-          </Link>
         </div>
       </div>
     </header>

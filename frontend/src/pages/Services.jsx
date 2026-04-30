@@ -66,6 +66,7 @@ export default function Services() {
                     <img
                       src={s.image}
                       alt={s.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
                     />
