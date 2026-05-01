@@ -20,7 +20,7 @@ const services = [
     description: 'Transform daytime real estate photos into stunning twilight scenes that attract more buyers and boost listing appeal.',
     icon: 'sun',
     image: '/project/DTE.jpg',
-    gallery: JSON.stringify(['/project/DTE.jpg', '/project/sunset..jpg']),
+    gallery: null,
     turnaround: '12 hours',
     price_from: '',
     sort_order: 2
@@ -36,10 +36,10 @@ const services = [
     sort_order: 3
   },
   {
-    title: 'Portrait Retouching',
+    title: 'Virtual Twilight',
     description: 'Professional portrait editing for weddings, corporate headshots, and personal photos with natural, flattering results.',
     icon: 'user',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80',
+    image: '/project/sunset..jpg',
     gallery: null,
     turnaround: '12 hours',
     price_from: '',
