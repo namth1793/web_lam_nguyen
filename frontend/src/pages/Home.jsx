@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Payment from '../components/Payment';
 import Lightbox from '../components/Lightbox';
+import Payment from '../components/Payment';
 import ServiceImageSlider from '../components/ServiceImageSlider';
 import axios from '../lib/axios';
 
@@ -96,12 +96,12 @@ export default function Home() {
           </div>
 
           {/* Hero image */}
-          <div className="flex-1 hidden lg:flex max-w-lg">
+          <div className="flex-1 hidden lg:flex max-w-2xl">
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full">
               <img
                 src="/project/Day__.jpg"
                 alt="Day to Dusk editing"
-                className="w-full h-[380px] object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
