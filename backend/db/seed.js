@@ -10,6 +10,7 @@ const services = [
     description: 'Combine multiple exposure layers to produce flawless real estate images with sharp detail in both highlights and shadows.',
     icon: 'camera',
     image: '/project/HDR.jpg',
+    gallery: null,
     turnaround: '12 hours',
     price_from: '',
     sort_order: 1
@@ -18,7 +19,8 @@ const services = [
     title: 'Day to Dusk',
     description: 'Transform daytime real estate photos into stunning twilight scenes that attract more buyers and boost listing appeal.',
     icon: 'sun',
-    image: '/project/Day__.jpg',
+    image: '/project/DTE.jpg',
+    gallery: JSON.stringify(['/project/DTE.jpg', '/project/sunset..jpg']),
     turnaround: '12 hours',
     price_from: '',
     sort_order: 2
@@ -28,6 +30,7 @@ const services = [
     description: 'Professionally blend flash and ambient light for interior photography, showcasing properties in their most natural, beautiful light.',
     icon: 'zap',
     image: '/project/Flash_Ambient.jpg',
+    gallery: null,
     turnaround: '12 hours',
     price_from: '',
     sort_order: 3
@@ -37,6 +40,7 @@ const services = [
     description: 'Professional portrait editing for weddings, corporate headshots, and personal photos with natural, flattering results.',
     icon: 'user',
     image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80',
+    gallery: null,
     turnaround: '12 hours',
     price_from: '',
     sort_order: 4
@@ -46,6 +50,7 @@ const services = [
     description: 'Digitally furnish empty rooms so buyers can visualize the full potential of a property, increasing engagement and sales.',
     icon: 'home',
     image: '/project/Virtual_Renovation_and_Virtual_Staging.jpg',
+    gallery: null,
     turnaround: '24 hours',
     price_from: '',
     sort_order: 5
@@ -55,6 +60,7 @@ const services = [
     description: 'Create accurate, detailed 2D and 3D floor plans that help buyers clearly understand a property\'s layout and dimensions.',
     icon: 'layout',
     image: '/project/Floorplan 2D.webp',
+    gallery: null,
     turnaround: '24 hours',
     price_from: '',
     sort_order: 6
@@ -64,6 +70,7 @@ const services = [
     description: 'Showcase a property\'s before-and-after potential through digital renovation — new paint, flooring, furniture, and more.',
     icon: 'tool',
     image: '/project/Virtual_Renovation_and_Virtual_Staging.jpg',
+    gallery: null,
     turnaround: '24 hours',
     price_from: '',
     sort_order: 7
@@ -73,6 +80,7 @@ const services = [
     description: 'Professional editing for real estate walkthrough and drone videos with color grading, music, and smooth transitions.',
     icon: 'video',
     image: '/project/video.mp4',
+    gallery: null,
     turnaround: '24 hours',
     price_from: '',
     sort_order: 8
@@ -80,8 +88,8 @@ const services = [
 ];
 
 const insertService = db.prepare(`
-  INSERT INTO services (title, description, icon, image, turnaround, price_from, sort_order)
-  VALUES (@title, @description, @icon, @image, @turnaround, @price_from, @sort_order)
+  INSERT INTO services (title, description, icon, image, gallery, turnaround, price_from, sort_order)
+  VALUES (@title, @description, @icon, @image, @gallery, @turnaround, @price_from, @sort_order)
 `);
 services.forEach(s => insertService.run(s));
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Payment from '../components/Payment';
 import Lightbox from '../components/Lightbox';
+import ServiceImageSlider from '../components/ServiceImageSlider';
 import axios from '../lib/axios';
 
 const isVideo = (src) => src && /\.(mp4|webm|ogg)$/i.test(src);
@@ -94,18 +95,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero image grid */}
-          <div className="flex-1 hidden lg:grid grid-cols-2 gap-4 max-w-lg">
-            {[
-              'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80',
-              'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80',
-              'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80',
-              'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80',
-            ].map((src, i) => (
-              <div key={i} className={`rounded-2xl overflow-hidden ${i === 1 ? 'mt-6' : ''} shadow-2xl`}>
-                <img src={src} alt="edited photo" className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-            ))}
+          {/* Hero image */}
+          <div className="flex-1 hidden lg:flex max-w-lg">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full">
+              <img
+                src="/project/Day__.jpg"
+                alt="Day to Dusk editing"
+                className="w-full h-[380px] object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
           </div>
         </div>
 
@@ -143,13 +141,15 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map(s => (
+            {services.map(s => {
+              const images = s.gallery && s.gallery.length > 0 ? s.gallery : null;
+              return (
               <div key={s.id} className="card group">
-                <div
-                  className="relative overflow-hidden h-48 cursor-zoom-in"
-                  onClick={() => setLightbox({ image: s.image, title: s.title })}
-                >
-                  {isVideo(s.image) ? (
+                {isVideo(s.image) ? (
+                  <div
+                    className="relative overflow-hidden h-48 cursor-pointer"
+                    onClick={() => setLightbox({ image: s.image, title: s.title })}
+                  >
                     <video
                       src={s.image}
                       muted
@@ -159,25 +159,25 @@ export default function Home() {
                       onMouseEnter={e => e.target.play()}
                       onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0; }}
                     />
-                  ) : (
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      onError={e => { e.target.src = 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80'; }}
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-3xl drop-shadow">{isVideo(s.image) ? '▶' : '🔍'}</span>
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white text-3xl drop-shadow">▶</span>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <ServiceImageSlider
+                    images={images || [s.image]}
+                    title={s.title}
+                    height="h-48"
+                    onImageClick={(img, title) => setLightbox({ image: img, title })}
+                  />
+                )}
                 <div className="p-5">
                   <h3 className="font-display font-semibold text-gray-900 text-base mb-2">{s.title}</h3>
                   <p className="text-sm text-gray-500 line-clamp-2">{s.description}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">

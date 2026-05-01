@@ -34,6 +34,7 @@ db.exec(`
     description TEXT,
     icon TEXT,
     image TEXT,
+    gallery TEXT,
     turnaround TEXT,
     price_from TEXT,
     sort_order INTEGER DEFAULT 0
